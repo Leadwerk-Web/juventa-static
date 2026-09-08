@@ -7,10 +7,11 @@ if ('IntersectionObserver' in window) {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       const delay = Number(entry.target.getAttribute('data-anim-delay') || 0);
-      window.setTimeout(() => entry.target.classList.add('is-visible'), delay);
+      if (delay) entry.target.style.animationDelay = `${delay}ms`;
+      entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+  }, { rootMargin: '0px 0px 0px 0px', threshold: 0 });
   document.querySelectorAll('.anim').forEach((element) => reveal.observe(element));
 }
 
@@ -122,7 +123,8 @@ if (heroMedia) {
 }
 
 const fxLayer = document.querySelector('[data-mouse-fx]');
-if (fxLayer && !reduceMotion) {
+const finePointer = window.matchMedia('(pointer: fine)').matches;
+if (fxLayer && !reduceMotion && finePointer) {
   window.addEventListener('mousemove', (event) => {
     const x = (event.clientX / window.innerWidth - 0.5) * 36;
     const y = (event.clientY / window.innerHeight - 0.5) * 24;
