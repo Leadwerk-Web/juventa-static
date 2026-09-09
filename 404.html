@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/main.js"></script>
 </head>
-<body>
+<body class="utility-page utility-page--404">
   <a class="skip-link" href="#content">Zum Inhalt springen</a>
   <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
@@ -26,13 +26,19 @@
       <div class="site-language-switcher" data-lw-language-switcher-slot hidden></div>
     </nav>
   </header>
-  <main id="content">
-    <section class="page-hero" data-lw-section="notfound">
-      <div class="wrap prose">
-        <h1 data-lw-field="notfound.title" data-lw-type="richtext">Diese Seite gibt es hier nicht.</h1>
-        <p class="lead" data-lw-field="notfound.copy" data-lw-type="textarea">Der Link ist veraltet oder die Adresse stimmt nicht. Über die Startseite oder den direkten Kontakt finden Sie den Weg zurück.</p>
-        <p><a class="btn" href="index.html"><span data-lw-field="notfound.home_label" data-lw-type="text">Zur Startseite</span></a>
-          <a class="btn btn--teal" href="kontakt.html"><span data-lw-field="notfound.contact_label" data-lw-type="text">Kontakt</span></a></p>
+  <main id="content" class="utility-main">
+    <section class="utility-stage" data-lw-section="notfound">
+      <div class="wrap utility-layout">
+        <div class="utility-mark" aria-hidden="true"><span>404</span></div>
+        <div class="utility-card">
+          <p class="utility-eyebrow" data-lw-field="notfound.eyebrow" data-lw-type="text">Seite nicht gefunden</p>
+          <h1 data-lw-field="notfound.title" data-lw-type="richtext">Diese Seite gibt es hier nicht.</h1>
+          <p class="lead" data-lw-field="notfound.copy" data-lw-type="textarea">Der Link ist veraltet oder die Adresse stimmt nicht. Über die Startseite oder den direkten Kontakt finden Sie den Weg zurück.</p>
+          <div class="utility-actions">
+            <a class="btn" href="index.html" data-lw-page-ref="juventa-static-home-v1"><span data-lw-field="notfound.home_label" data-lw-type="text">Zur Startseite</span></a>
+            <a class="btn btn--teal" href="kontakt.html" data-lw-page-ref="juventa-static-kontakt-v1"><span data-lw-field="notfound.contact_label" data-lw-type="text">Kontakt</span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>

@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/main.js"></script>
 </head>
-<body>
+<body class="utility-page utility-page--thanks">
   <a class="skip-link" href="#content">Zum Inhalt springen</a>
   <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
@@ -28,12 +28,19 @@
       <div class="site-language-switcher" data-lw-language-switcher-slot hidden></div>
     </nav>
   </header>
-  <main id="content">
-    <section class="page-hero" data-lw-section="thanks">
-      <div class="wrap prose">
-        <h1 data-lw-field="thanks.title" data-lw-type="richtext">Vielen Dank für Ihre Nachricht.</h1>
-        <p class="lead" data-lw-field="thanks.copy" data-lw-type="textarea">Wir haben Ihre Anfrage erhalten und melden uns zeitnah. Montag bis Freitag erreichen Sie uns zwischen 09:00 und 16:00 Uhr.</p>
-        <p><a class="btn" href="index.html"><span data-lw-field="thanks.home_label" data-lw-type="text">Zur Startseite</span></a></p>
+  <main id="content" class="utility-main">
+    <section class="utility-stage" data-lw-section="thanks">
+      <div class="wrap utility-layout">
+        <div class="utility-mark utility-mark--success" aria-hidden="true"><span>✓</span></div>
+        <div class="utility-card">
+          <p class="utility-eyebrow" data-lw-field="thanks.eyebrow" data-lw-type="text">Nachricht angekommen</p>
+          <h1 data-lw-field="thanks.title" data-lw-type="richtext">Vielen Dank für Ihre Nachricht.</h1>
+          <p class="lead" data-lw-field="thanks.copy" data-lw-type="textarea">Wir haben Ihre Anfrage erhalten und melden uns zeitnah. Montag bis Freitag erreichen Sie uns zwischen 09:00 und 16:00 Uhr.</p>
+          <div class="utility-actions">
+            <a class="btn" href="index.html" data-lw-page-ref="juventa-static-home-v1"><span data-lw-field="thanks.home_label" data-lw-type="text">Zur Startseite</span></a>
+            <a class="utility-text-link" href="leistungen.html" data-lw-page-ref="juventa-static-leistungen-v1"><span data-lw-field="thanks.services_label" data-lw-type="text">Unsere Leistungen entdecken</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
