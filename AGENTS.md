@@ -311,6 +311,17 @@ profile points to real local logo and favicon files. Canonical URL, OG URL,
 hreflang and structured Organization/LocalBusiness data are generated from the
 installed site and the typed project variables.
 
+Every HTML document also declares one page-specific Yoast seed in `<head>`:
+
+```html
+<meta name="leadwerk:focus-keyphrase" content="Primary service plus place or audience">
+```
+
+Use the approved phrase from `PROJECT-BRIEF.md`; do not copy one generic phrase
+to every page. GTD imports it into `_yoast_wpseo_focuskw`. If an older source
+omits it, GTD safely seeds the normalized H1 so Fokus-Keyphrase is never blank,
+but explicit intent is preferred.
+
 ## Annotations
 
 ```html
@@ -328,6 +339,13 @@ installed site and the typed project variables.
 - Repeaters use `data-lw-repeater` plus a permanent `data-lw-item-key`.
 - Header/footer shared values use `data-lw-global`. Same key, same type everywhere.
 - JS-only content is not importable unless the seed exists in the HTML.
+- Production pages must not use `data-lw-type="html"`. Never put a complete
+  `<ul>`, multi-paragraph container, gallery or card into one raw-HTML field.
+  Annotate each semantic child: list/card/gallery containers use
+  `data-lw-repeater`, every repeated child gets a permanent
+  `data-lw-item-key`, plain copy uses `text`/`textarea`, inline formatting uses
+  `richtext`, and every media node uses `image`/`video`/`file`. This keeps the
+  WordPress editor compact and prevents editors from touching markup.
 
 ## Static vs WordPress parity
 
