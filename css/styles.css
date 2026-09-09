@@ -328,6 +328,10 @@ body:not(.home) main { padding-top: 88px; }
   background-image: url("../assets/texture-hintergrund.webp");
   background-size: cover;
   background-position: center;
+  /* The mouse-following texture is intentionally oversized. Keep its motion,
+     but crop it at the section boundary so it can never widen the viewport. */
+  overflow: hidden;
+  overflow: clip;
 }
 .section--cream .fx-layer {
   position: absolute;
