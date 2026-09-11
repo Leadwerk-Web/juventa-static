@@ -187,7 +187,8 @@ body:not(.home) .site-header {
   backdrop-filter: blur(12px);
   pointer-events: auto;
 }
-body:not(.home) main { padding-top: 88px; }
+/* The fixed brand header is about 155px tall on desktop; keep page heroes clear of it. */
+body:not(.home) main { padding-top: 155px; }
 
 .site-language-switcher { flex: 0 0 auto; }
 
@@ -1455,6 +1456,7 @@ body:has([data-lw-section="privacy"]) .site-footer .footer-legal {
   }
   body:not(.home) .is-open .nav-links { display: flex; }
 
+  body:not(.home) main { padding-top: 115px; }
   .legal-page main { padding-top: 115px; }
   .legal-page .page-hero { padding: 28px 0 56px; }
   .legal-page .page-hero::after {
